@@ -5,9 +5,9 @@ import RxCocoa
 // MARK: - KVO
 extension Reactive where Base: AVPlayer {
 
-  public var status: Observable<AVPlayerStatus> {
+    public var status: Observable<AVPlayer.Status> {
     return self
-      .observe(AVPlayerStatus.self, #keyPath(AVPlayer.status))
+        .observe(AVPlayer.Status.self, #keyPath(AVPlayer.status))
       .map { $0 ?? .unknown }
   }
 
@@ -17,9 +17,9 @@ extension Reactive where Base: AVPlayer {
   }
 
   @available(iOS 10.0, *)
-  public var timeControlStatus: Observable<AVPlayerTimeControlStatus> {
+    public var timeControlStatus: Observable<AVPlayer.TimeControlStatus> {
     return self
-      .observe(AVPlayerTimeControlStatus.self, #keyPath(AVPlayer.timeControlStatus))
+        .observe(AVPlayer.TimeControlStatus.self, #keyPath(AVPlayer.timeControlStatus))
       .map { $0 ?? .paused }
   }
 
@@ -34,9 +34,9 @@ extension Reactive where Base: AVPlayer {
       .observe(AVPlayerItem.self, #keyPath(AVPlayer.currentItem))
   }
 
-  public var actionAtItemEnd: Observable<AVPlayerActionAtItemEnd> {
+    public var actionAtItemEnd: Observable<AVPlayer.ActionAtItemEnd> {
     return self
-      .observe(AVPlayerActionAtItemEnd.self, #keyPath(AVPlayer.actionAtItemEnd))
+        .observe(AVPlayer.ActionAtItemEnd.self, #keyPath(AVPlayer.actionAtItemEnd))
       .map { $0 ?? .none }
   }
 
