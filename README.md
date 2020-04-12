@@ -14,8 +14,8 @@
 | Target            | Version |
 |-------------------|---------|
 | iOS               |  => 10.0 |
-| Swift             |  ~> 4.0 |
-| RxSwift / RxCocoa |  ~> 4.0 |
+| Swift             |  ~> 5.0 |
+| RxSwift / RxCocoa |  ~> 5.0 |
 
 ## Installation
 
